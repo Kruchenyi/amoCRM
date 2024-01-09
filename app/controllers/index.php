@@ -1,9 +1,11 @@
 <?php
 
+
 use myclass\Validator;
 use myclass\AuthAmo;
 use AmoCRM\{AmoAPI, AmoLead, AmoAPIException, AmoCompany, AmoContact};
 use AmoCRM\TokenStorage\TokenStorageException;
+
 
 require VIEWS . '/incs/header.php';
 
@@ -41,7 +43,10 @@ $subdomain = 'stopham80';
 
 require VIEWS . '/incs/main.php';
 require VIEWS . '/incs/footer.php';
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+
+
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+
     if (!$validator->hasError()) {
         $authAmo = new AuthAmo($clientId, $clientSecret, $authCode, $redirectUri, $subdomain);
         $contact1 = new AmoContact([
@@ -67,5 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         ]);
         $lead1->addContacts($contactId);
         $leadId = $lead1->save();
+        header('Location: success');
     }
 }

@@ -169,7 +169,26 @@ body {
   }
 }
 
-
-.error__item{
+.error__item {
   color: red;
+}
+
+.success-block {
+  text-align: center;
+  &__title {
+    font-size: 34px;
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    color: black;
+    font-size: 22px;
+    border: 1px solid #333;
+    padding: 10px 30px;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
 }
