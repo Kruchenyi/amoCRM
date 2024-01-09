@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "myclass\\" : "vendor/core/classes" 
+        }
+    },
+    "require": {
+        "andrey-tech/amocrm-api-php": "^2.7"
+    }
+}
